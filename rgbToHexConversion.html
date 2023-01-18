@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB to Hex Conversion</title>
+    <style>
+        body{
+           background-color:#051B2D;
+        }
+    </style>
+    <script>
+        var a=[80, 177, 210];
+    
+        var Remainder1,Remainder2,numberFinalHex,numberFinalHexArr='';
+
+
+        var HexBig=['A','B','C','D','E','F'];
+
+        var c=0;
+
+        
+        var NumberToUse=a[c];
+        
+        for(var i=0; i<3 ; i++)
+            {
+                if(a[i]<100){
+                    Remainder1='0';
+                    a[i]=~~(a[i]/16);
+                    Remainder2=a[i]%16;
+                }
+
+                else{
+                    Remainder1=a[i]%16;
+                    a[i]=~~(a[i]/16);
+                    Remainder2=a[i]%16;
+                }
+               
+
+
+                if(Remainder1>9){
+                    Remainder1=Remainder1%10;
+                    Remainder1=HexBig[Remainder1];
+                } 
+
+                if(Remainder2>9){
+                    Remainder2=Remainder2%10;
+                    Remainder2=HexBig[Remainder2];
+                } 
+
+                 numberFinalHex=Remainder1+Remainder2;
+
+
+                 numberFinalHexArr=numberFinalHexArr+numberFinalHex;
+
+                 
+             }
+
+             console.log(numberFinalHexArr);
+
+        
+        
+
+
+    </script>
+</head>
+<body>
+    <h5>Color test</h5>
+</body>
+</html> 
